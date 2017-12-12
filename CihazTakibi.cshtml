@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "CihazTakibi";
+    Layout = "~/Views/Shared/WebLayout.cshtml";
+}
+
+@model List<TeknikServis.DAL.Urun>
+<div class="overlay-fluid-block">
+    <div class="container text-center">
+        <div class="row">
+            <div class="home-wrapper">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="home-content">
+                        <h1>Cihaz Takip</h1>
+                        
+                        <form class="form-horizontal" role="form" action="/Web/Sorgula" method="post">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                                    <div class="home-contact">
+                                        <div class="input-group">
+                                            <input type="text" name="IslemNo" class="form-control" placeholder="Lütfen cihaz işlem numarasını giriniz.">
+                                            <input type="submit" class="form-control" value="Sorgula">
+                                        </div><!-- /input-group -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

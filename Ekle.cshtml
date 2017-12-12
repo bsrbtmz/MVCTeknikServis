@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@section head{
+    <style>
+        #hata {
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+}
+<br /> <br /><br /><br />
+
+<div class="panel-body">
+    <form class="form-horizontal" role="form" action="/Kullanici/Ekle" method="post">
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Kullanıcı Adı</label>
+            <div class="col-lg-10">
+                <input name="KullaniciAdi" type="text" class="form-control" id="inputEmail1" placeholder="Kullanıcı adı giriniz">
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Parola</label>
+            <div class="col-lg-10">
+                <input name="Parola" type="password" class="form-control" id="inputPassword1" placeholder="Parola giriniz" min="3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input name="Email" type="text" class="form-control" id="inputEmail1" placeholder="Email giriniz">
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Gizli Soru</label>
+            <div class="col-lg-10">
+                <input name="GizliSoru" type="text" class="form-control" id="inputEmail1">
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Gizli Cevap</label>
+            <div class="col-lg-10">
+                <input name="GizliCevap" type="text" class="form-control" id="inputEmail1" placeholder="Gizli Cevap giriniz">
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+            <span id="hata">@ViewBag.Mesaj</span>
+        </div>
+    </form>
+</div>

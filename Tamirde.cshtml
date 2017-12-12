@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Tamirde";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using TeknikServis.DAL
+@model List<Islem>
+<br /> <br /><br /><br />
+<section class="panel">
+    <header class="panel-heading">
+        İşlem Bilgileri
+    </header>
+
+    <div class="panel-body">
+        <div class="adv-table editable-table ">
+
+            <div class="space15"></div>
+            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                    <tr>
+                        <th>Servis Durumu</th>
+                        <th>Ürün İşlem Numarası</th>
+                        <th>Arıza Durumu</th>
+                        <th>Servis Yeri</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Islem islem in Model)
+                    {
+                        <tr class="">
+                            <td>@islem.ServisDurum.ServisDurum1</td>
+                            <td>@islem.Urun.IslemNo</td>
+                            <td>@islem.Ariza.ArizaAciklama</td>
+                            <td>@islem.ServisYeri.ServisYeri1 </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+
+

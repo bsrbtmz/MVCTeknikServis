@@ -1,0 +1,209 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    @*<link rel="shortcut icon" href="img/favicon.png">*@
+
+    <title>Tektek Servis- @ViewBag.Title</title>
+
+    <link href="~/Content/Admin/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="~/Content/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/css/bootstrap-reset.css" rel="stylesheet" />
+    <link href="~/Content/Admin/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/Admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/Admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/Admin/css/style.css" rel="stylesheet" />
+    <link href="~/Content/Admin/css/style-responsive.css" rel="stylesheet" />
+
+    
+
+    @RenderSection("head", false)
+</head>
+
+<body>
+
+    <section id="container">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="/Admin/Index" class="logo">Soft-Tech<span>Servis</span></a>
+
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Ara">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <span class="username">@User.Identity.Name</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            @*<div class="log-arrow-up">
+                          
+                            </div>*@
+
+                            <li><a href="/Uye/Cikis"><i class="icon-key"></i> Çıkış Yap</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="/Admin/Index">
+                            <i class="icon-dashboard"></i>
+                            <span>Anasayfa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="/YeniServisKaydi/Index">
+                            <i class="icon-circle"></i>
+                            <span>Yeni Servis Kaydı</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-wrench"></i>
+                            <span>Servis Kayıtları</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/UrunIslem/Tamirde">Tamirde</a></li>
+                            <li><a href="/UrunIslem/Islemde">İşlemde</a></li>
+                            <li><a href="/UrunIslem/ParcaDegisimi">Parça Değişimi</a></li>
+                            <li><a href="/UrunIslem/Tamamlandi">Tamamlandı</a></li>
+                            <li><a href="/UrunIslem/TeslimEdildi">Teslim Edildi</a></li>
+                            <li><a href="/UrunIslem/IptalEdildi">İptal Edildi</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="active" href="/Musteriler/Index">
+                            <i class="icon-user" ></i>
+                            <span>Müşteriler</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="/Urunler/Index">
+                            <i class="icon-rocket"></i>
+                            <span>Ürünler</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="/UrunTeslim/Index">
+                            <i class="icon-rocket"></i>
+                            <span>Ürün Teslim Durumu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="/Personel/Index">
+                            <i class="glyphicon-user"></i>
+                            <span>Personel</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-gears"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Kullanici/Index">Kullanıcı Ayarları</a></li>
+                            
+                        </ul>
+                    </li>
+
+                 
+                    
+                 
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            @RenderBody()
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2013 &copy; Powered By...
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+@RenderSection("body", false)
+
+    <script src="~/Content/Admin/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Content/Admin/js/jquery.js"></script>
+    <script src="~/Content/Admin/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" 
+            src="~/Content/Admin/js/jquery.dcjqaccordion.2.7.js"></script>
+
+    <script src="~/Content/Admin/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/Admin/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/Admin/js/jquery.sparkline.js"></script>
+    @*<script src="~/Content/Admin/js/owl.carousel.js"></script>*@
+    <script src="~/Content/Admin/assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/Content/Admin/js/external-dragging-calendar.js"></script>
+    <script src="~/Content/Admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/Content/Admin/js/respond.min.js"></script>
+    <script src="~/Content/Admin/js/common-scripts.js"></script>
+    <script src="~/Content/Admin/js/sparkline-chart.js"></script>
+    <script src="~/Content/Admin/js/easy-pie-chart.js"></script>
+    <script src="~/Content/Admin/js/count.js"></script>
+    <script src="~/Content/Admin/js/owl.carousel.js">
+
+
+
+
+      //owl carousel
+
+      $(document).ready(function() {
+          $("#owl-demo").owlCarousel({
+              navigation : true,
+              slideSpeed : 300,
+              paginationSpeed : 400,
+              singleItem : true,
+			  autoPlay:true
+
+          });
+      });
+
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+    </script>
+@RenderSection("scripts", false)
+</body>
+</html>

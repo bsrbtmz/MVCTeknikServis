@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "MusteriEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model TeknikServis.DAL.Musteri
+
+    <br /> <br /><br /><br />
+
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Müşteri Ekleme Sayfası
+                </header>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="/Musteriler/MusteriEkle" method="post">
+                        <div class="form-group">
+                            <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Adı</label>
+                            <div class="col-lg-10">
+                                <input name="Adi" type="text" class="form-control" id="inputEmail1" placeholder="Adi giriniz">
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Soyadi</label>
+                            <div class="col-lg-10">
+                                <input name="Soyadi" type="text" class="form-control" id="inputPassword1" placeholder="Soyadi giriniz">
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                <input name="Email" type="text" class="form-control" id="inputPassword1" placeholder="Email giriniz">
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Telefon</label>
+                            <div class="col-lg-10">
+                                <input name="Telefon" type="text" class="form-control" id="inputPassword1" placeholder="Telefon giriniz">
+                            </div>
+                            
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" class="btn btn-send">Ekle</button>
+                            </div>
+                        </div>
+                        
+
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+

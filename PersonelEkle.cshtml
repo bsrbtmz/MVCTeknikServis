@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using TeknikServis.DAL
+@model Personel
+<br /> <br /><br /><br />
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Personel Ekleme Sayfası
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form" action="/Personel/PersonelEkle" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Personel Adı</label>
+                        <div class="col-lg-10">
+                            <input name="Ad" type="text" class="form-control" id="inputEmail1" placeholder="Personel adı giriniz">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Personel Soyad</label>
+                        <div class="col-lg-10">
+                            <input name="Soyad" type="text" class="form-control" id="inputEmail1" placeholder="Personel soyad giriniz">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Doğum Tarihi</label>
+                        <div class="col-lg-10">
+                            <input name="DogumTarihi" type="date" class="form-control" id="inputEmail1"
+                                   placeholder="Ürün Giriş Tarihi giriniz">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">İşe Giriş Tarihi</label>
+                        <div class="col-lg-10">
+                            <input name="IseGirisTarihi" type="date" class="form-control" id="inputEmail1"
+                                   placeholder="Ürün Giriş Tarihi giriniz">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">E mail</label>
+                        <div class="col-lg-10">
+                            <input name="Email" type="email" class="form-control" id="inputEmail1" placeholder="Email giriniz">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Telefon</label>
+                        <div class="col-lg-10">
+                            <input name="Telefon" type="tel" class="form-control" id="inputEmail1" placeholder="Telefon giriniz">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-send">Ekle</button>
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+

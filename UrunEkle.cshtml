@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model TeknikServis.DAL.Urun
+
+<br /><br /><br /><br />
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ürün Ekleme Sayfası
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form" action="/Urunler/UrunEkle" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">SeriNo</label>
+                        <div class="col-lg-10">
+                            <input name="IslemNo" type="text" class="form-control" id="inputEmail1" placeholder="İşlemNo giriniz">
+                            <p class="help-block">Example block-level help text here.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Kategori</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="KategoriId">
+                                @foreach (var ktg in ViewBag.Kategori)
+                                {
+                                    <option value="@ktg.Id">@ktg.Adi</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Marka</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="MarkaId">
+                                @foreach (var marka in ViewBag.Marka)
+                                {
+                                    <option value="@marka.Id">@marka.Adi </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Model</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="ModelId">
+                                @foreach (var mdl in ViewBag.Model)
+                                {
+                                    <option value="@mdl.Id">@mdl.Adi </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Ürün Giriş Tarihi</label>
+                        <div class="col-lg-10">
+                            <input name="GirisTarihi" type="date" class="form-control" id="inputEmail1"
+                                   placeholder="Ürün Giriş Tarihi giriniz">
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Garantili</label>
+                        <div class="checkbox">
+                            <input name="Garantilimi" type="checkbox" class="form-control">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-send">Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
