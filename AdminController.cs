@@ -17,16 +17,7 @@ namespace TeknikServis.UI.Controllers
         {
             return View();
         }
-        public ActionResult Goruntule()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Goruntule(string musteri)
-        {
-            var ara = tekServis.procMusteriAra(musteri);           
-            return View(ara);
-        }
+      
 
     }
 }
